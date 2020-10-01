@@ -1,13 +1,138 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Cabin", "Times New Roman", Times, sans-serif;
+  color: #2f2f2f;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul {
+  margin: 0;
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 0.5em;
+  color: white;
+  text-decoration: none;
+}
+
+.main-nav {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: lighter;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.main-nav li {
+  padding: 0 5%;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 25, 25, 0.2);
+}
+
+.main-header {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(supahot.gif);
+  background-blend-mode: multiply;
+  background-size: cover;
+  padding-bottom: 60vh;
+}
+
+.brand-name {
+  text-align: center;
+  margin: 0;
+  font-size: 4em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: normal;
+  color: white;
+}
+
+.brand-name-large {
+  font-size: 7em;
+}
+
+.content-section {
+  margin: 1em;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+.section-header {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: darkred;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.about-brand-image {
+  float: left;
+  width: 50%;
+  margin: 15px;
+  border-radius: 15%;
+}
+
+.main-footer {
+  background-color: darkred;
+  color: white;
+  padding: 0.25em 0;
+}
+
+.main-footer-container {
+  display: flex;
+  align-items: center;
+}
+
+.main-footer-container ul {
+  flex-grow: 1;
+  text-align: end;
+}
+
+.footer-nav li {
+  padding: 0 0.5em;
+}
+
+.footer-nav img {
+  width: 35px;
+  height: 35px;
+}
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.67em;
+  cursor: pointer;
+}
+
+.btn-header {
+  margin: 0.5em 15% 2em 15%;
+  display: block;
+  margin: 30px auto;
+  color: white;
+  border: 2px solid #f6f6f6;
+  background-color: rgba(255, 25, 25, 0.2);
+  border-radius: 0;
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.btn-header:hover {
+  background-color: rgba(25, 25, 25, 0.1);
 }

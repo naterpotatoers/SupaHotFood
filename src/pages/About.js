@@ -3,8 +3,8 @@ import React, { Component } from "react";
 export class About extends Component {
   render() {
     return (
-      <div>
-        <h4>About</h4>
+      <div className="container">
+        <h4 className="section-header">About</h4>
       </div>
     );
   }

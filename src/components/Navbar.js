@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 export class Navbar extends Component {
   render() {
     return (
-      <div>
-        <nav>
+      <header className="main-header">
+        <nav className="nav main-nav">
           <ul>
             <li>
               <NavLink to="/">Home</NavLink>
@@ -15,7 +15,8 @@ export class Navbar extends Component {
             </li>
           </ul>
         </nav>
-      </div>
+        <h1 className="brand-name brand-name-large">SupaHotFood</h1>
+      </header>
     );
   }
 }

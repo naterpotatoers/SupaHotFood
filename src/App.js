@@ -5,14 +5,12 @@ import { Home } from "./pages/Home";
 import { Food } from "./pages/Food";
 import { About } from "./pages/About";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <h1>SupaHotFood</h1>
-      </div>
-      {/* Components outside switch (like Navbar) render on everypage */}
+      {/* Components outside switch (like Navbar & Footer) render on everypage */}
       <Navbar />
       {/* Renders the following components according to the listed path */}
       <Switch>
@@ -20,6 +18,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route exact path="/:food_id" component={Food} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

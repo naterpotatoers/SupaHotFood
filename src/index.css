@@ -136,3 +136,29 @@ body {
 .btn-header:hover {
   background-color: rgba(25, 25, 25, 0.1);
 }
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  flex: 1 1 0px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+
+  /* display: flex;
+  flex: 1 0 21%;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-basis: 33%;
+  align-items: center; */
+}
+
+.box {
+  overflow: hidden;
+  padding: 2px 16px;
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <Navbar />
       {/* Renders the following components according to the listed path */}
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/about" component={AboutPage} />
       </Switch>
       <Footer />
     </BrowserRouter>

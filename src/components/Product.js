@@ -1,35 +1,44 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Modal from "react-bootstrap/Modal";
+import { Button } from "react-bootstrap";
 
 const Product = ({ product }) => {
-  const [isShowing, setIsShowing] = useState(false);
+  const [show, setShow] = useState(false);
 
-  const toggleModal = () => {
-    console.log(product.ingredients);
-    setIsShowing(!isShowing);
-  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div className="box">
       <div>
-        <Link to={`/product/${product.label}`}>
+        <Link to="" onClick={handleShow}>
           <h5>
             <strong>{product.label}</strong>
           </h5>
         </Link>
-        <button className="trigger btn" onClick={toggleModal}>
+        <Button className="trigger btn" onClick={handleShow}>
           Info
-        </button>
+        </Button>
       </div>
-      <Link to={`/product/${product.label}`}>
+      <Link to="" onClick={handleShow}>
         <img src={product.image} alt="" />
       </Link>
-      <div className="modal">
-        <div className="modal-content">
-          <span className="close-button">&times;</span>
-          <h3>hello worold</h3>
-        </div>
-      </div>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <button variant="secondary" onClick={handleClose}>
+            Close
+          </button>
+          <button variant="primary" onClick={handleClose}>
+            Save Changes
+          </button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

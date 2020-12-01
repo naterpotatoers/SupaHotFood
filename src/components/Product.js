@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Modal from "react-bootstrap/Modal";
-import { Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 const Product = ({ product }) => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -17,27 +15,47 @@ const Product = ({ product }) => {
             <strong>{product.label}</strong>
           </h5>
         </Link>
-        <Button className="trigger btn" onClick={handleShow}>
-          Info
-        </Button>
       </div>
       <Link to="" onClick={handleShow}>
         <img src={product.image} alt="" />
       </Link>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <button variant="secondary" onClick={handleClose}>
-            Close
-          </button>
-          <button variant="primary" onClick={handleClose}>
-            Save Changes
-          </button>
-        </Modal.Footer>
+      <Modal className="Modal wrapper" show={show} onHide={handleClose}>
+        <div className="flex-modal">
+          <div className="box">
+            <div className="modal-header">
+              <strong>{product.label}</strong>
+            </div>
+            <img src={product.image} alt="" />
+          </div>
+          <div className="box">
+            <button className="btn btn-modal">
+              <a href={product.url} target="_blank" rel="noopener noreferrer">
+                Recipe Link
+              </a>
+            </button>
+            <button className="btn" onClick={handleClose}>
+              Close
+            </button>
+          </div>
+          <div className="flex-container">
+            <div className="box">
+              <h3>Ingredients</h3>
+              <ul>
+                {product.ingredientLines.map((ingredient) => (
+                  <li>{ingredient}</li>
+                ))}
+              </ul>
+
+              <h3>Additional Info</h3>
+              <ul>
+                {product.healthLabels.map((labels) => (
+                  <li>{labels}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </Modal>
     </div>
   );

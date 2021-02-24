@@ -2,8 +2,5 @@ sudo: true
 language: node_js
 node_js:
   - node
-cache: npm
-script:
-  - npm install
-  - npm run build
-  - npm run test
+git:
+  quiet: true
